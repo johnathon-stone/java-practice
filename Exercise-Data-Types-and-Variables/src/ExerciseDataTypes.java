@@ -51,5 +51,13 @@ public class ExerciseDataTypes {
         System.out.println("Updated Weather Report for: " + cityName + ". The temperature is now: " + temperature + "°F with " + weatherCondition + " skies.");
         System.out.println("Flight Status update for: " + flightNumber + " that is arriving in " + arrivalCity + ". Updated gate: " + gateNumber + " Delayed: " + isDelayed + ".");
 
+//       Part 4: Working with Boolean Variables
+        boolean hasHomework = false;
+        boolean isWeekend = false;
+        boolean attendedClass = true;
+
+        System.out.println("Do I have homework? " + hasHomework);
+        System.out.println("Is it the weekend? " + isWeekend);
+        System.out.println("Did I attend class today? " + attendedClass);
     }
 }
