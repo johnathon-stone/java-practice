@@ -31,7 +31,7 @@ public class ExerciseDataTypes {
         boolean isDelayed = false;
 
 //        Part 2: Printing Variables
-        System.out.println("Soccer Player: " + playerName + " starting status: " + isStarter + " wears jersey number " + jerseyNumber + " and plays as a " + position + " for " + teamName + ".");
+        System.out.println("Soccer Player: " + playerName + ". Starting status: " + isStarter + ". Wears jersey number: " + jerseyNumber + ". Position: " + position + ". Team: " + teamName + ".");
         System.out.println("The movie " + movieTitle + " was released in " + releaseYear + " and stars " + leadActor + ". Rating: " + rating + ", Sequel: " + isSequel + ".");
         System.out.println("Weather Report: " + cityName + " has a temperature of " + temperature + "°F with " + weatherCondition + " skies. Currently raining: " + isRaining + " with " + humidity + "%.");
         System.out.println("Flight Status Report: Flight# " + flightNumber + " departing from " + departureCity + " and arriving to " + arrivalCity + " at gate " + gateNumber + " terminal " + terminal + ". Delayed: " + isDelayed);
@@ -46,7 +46,7 @@ public class ExerciseDataTypes {
         gateNumber = 8;
         isDelayed = true;
 
-        System.out.println("Updated information for Soccer Player: " + playerName + ". New jersey number " + jerseyNumber + " and starting status: " + isStarter);
+        System.out.println("\nUpdated information for Soccer Player: " + playerName + ". New jersey number " + jerseyNumber + " and starting status: " + isStarter);
         System.out.println("Updated information for the movie: " + movieTitle + ". It's new Rating: " + rating + " Sequel: " + isSequel + ".");
         System.out.println("Updated Weather Report for: " + cityName + ". The temperature is now: " + temperature + "°F with " + weatherCondition + " skies.");
         System.out.println("Flight Status update for: " + flightNumber + " that is arriving in " + arrivalCity + ". Updated gate: " + gateNumber + " Delayed: " + isDelayed + ".");
@@ -56,8 +56,15 @@ public class ExerciseDataTypes {
         boolean isWeekend = false;
         boolean attendedClass = true;
 
-        System.out.println("Do I have homework? " + hasHomework);
+        System.out.println("\nDo I have homework? " + hasHomework);
         System.out.println("Is it the weekend? " + isWeekend);
         System.out.println("Did I attend class today? " + attendedClass);
+
+//       Part 5: Exploring the char Data Type
+        char firstInitial = 'J';
+        char lastInitial = 'S';
+        char favoriteGrade = 'A';
+
+        System.out.println("\nMy initials are " + firstInitial + "." + lastInitial + ". and my favorite grade to get is an " + favoriteGrade + ".");
     }
 }
