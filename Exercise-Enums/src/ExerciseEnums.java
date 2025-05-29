@@ -16,6 +16,14 @@ public class ExerciseEnums {
         VIP
 }
 
+//  Part 3. Convert Integer to Enum
+//   p3.1. Create an enum named 'TrafficLight' with values.
+    enum TrafficLight {
+        RED,
+        YELLOW,
+        GREEN
+}
+
     public static void main(String[] args) {
 
 //       p1.2. Declare and initialize a variable of type 'CoffeeSize' to store a predefined coffee order.
@@ -31,6 +39,14 @@ public class ExerciseEnums {
 
         System.out.println(sectionG + " is assigned value: " + sectionG.ordinal());
         System.out.println(sectionP + " is assigned value: " + sectionP.ordinal());
-        System.out.println(sectionV + " is assigned value: " + sectionV.ordinal());
+        System.out.printf("%s is assigned value: %d%n%n", sectionV, sectionV.ordinal());
+
+//       p3.2. Store all values in an array using 'values()'.
+        TrafficLight[] signals = TrafficLight.values();
+
+//       p3.3. Retrieve the correct signal based on a predefined index '(1 for YELLOW)'.
+        TrafficLight color = signals[1];
+//       p3.4. Print the selected signal.
+        System.out.println("Traffic light signal: " + color);
     }
 }
