@@ -24,6 +24,18 @@ public class ExerciseEnums {
         GREEN
 }
 
+    //  Part 4. Weekday Schedule
+//   p4.1. Create an enum named 'Weekday' with values.
+    enum Weekday {
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY
+    }
+
     public static void main(String[] args) {
 
 //       p1.2. Declare and initialize a variable of type 'CoffeeSize' to store a predefined coffee order.
@@ -46,7 +58,18 @@ public class ExerciseEnums {
 
 //       p3.3. Retrieve the correct signal based on a predefined index '(1 for YELLOW)'.
         TrafficLight color = signals[1];
+
 //       p3.4. Print the selected signal.
         System.out.println("Traffic light signal: " + color);
+
+//       p4.2. Declare a predefined workday 'WEDNESDAY' and print it.
+        Weekday workday = Weekday.WEDNESDAY;
+        System.out.println("\nWorkday selected: " + workday);
+
+//       p4.3. Check if the workday falls on a weekend 'SATURDAY or SUNDAY'.
+        boolean isWeekend = workday.equals(Weekday.SATURDAY) || workday.equals(Weekday.SUNDAY);
+
+//       p4.4. Print if it is a workday or weekend.
+        System.out.println("Is it a weekend? " + isWeekend);
     }
 }
