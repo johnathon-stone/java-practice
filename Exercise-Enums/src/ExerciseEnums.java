@@ -24,7 +24,7 @@ public class ExerciseEnums {
         GREEN
 }
 
-    //  Part 4. Weekday Schedule
+//  Part 4. Weekday Schedule
 //   p4.1. Create an enum named 'Weekday' with values.
     enum Weekday {
         MONDAY,
@@ -35,6 +35,15 @@ public class ExerciseEnums {
         SATURDAY,
         SUNDAY
     }
+
+//  Part 5. Emergency Alert System
+//   p5.1. Create an enum named 'AlertLevel' with values.
+    enum AlertLevel {
+        LOW,
+        MODERATE,
+        HIGH,
+        SEVERE
+}
 
     public static void main(String[] args) {
 
@@ -71,5 +80,24 @@ public class ExerciseEnums {
 
 //       p4.4. Print if it is a workday or weekend.
         System.out.println("Is it a weekend? " + isWeekend);
+
+//       p5.2. Declare an alert level 'HIGH' and print it.
+        AlertLevel currentAlert = AlertLevel.HIGH;
+        System.out.println("\nCurrent alert level: " + currentAlert);
+//       p5.3. Use a switch-case to print a response message based on the alert level.
+        switch (currentAlert) {
+            case LOW:
+                System.out.println("No immediate danger.");
+                break;
+            case MODERATE:
+                System.out.println("Stay alert and aware.");
+                break;
+            case HIGH:
+                System.out.println("Take precautions and stay informed.");
+                break;
+            case SEVERE:
+                System.out.println("Immediate action required!");
+                break;
+        }
     }
 }
