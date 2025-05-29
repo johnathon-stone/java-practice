@@ -11,13 +11,13 @@ public class ObjectPractice {
         System.out.println("Borrowing the book...");
         book1.borrowBook();
         book1.displayStatus();
-//        // Part 3: Shared Account Reference
-//        BankAccount acc1 = new BankAccount("Alice", 1000.0);
-//        BankAccount acc2 = acc1; // Reference copy
-//        acc1.displayBalance();
-//        System.out.println("Depositing $500 to acc2...");
-//        acc2.deposit(500);
-//        acc1.displayBalance();
+        // Part 3: Shared Account Reference
+        BankAccount acc1 = new BankAccount("Alice", 1000.0);
+        BankAccount acc2 = acc1; // Reference copy
+        acc1.displayBalance();
+        System.out.println("Depositing $500 to acc2...");
+        acc2.deposit(500);
+//        acc1.displayBalance();     //!* commented this out to correct the look and function of the program *!//
 //        // Part 4: Employee Tracking
 //        new Employee("John");
 //        new Employee("Jane");
