@@ -4,12 +4,12 @@ public class BankAccount {
     String owner;
     double balance;
 
-//   !* This was not include in the scope of the documentation but required for the program to work *!
+//   *! This was not include in the scope of the documentation but required for the program to work !*
     public BankAccount(String owner, double balance) {
         this.owner = owner;
         this.balance = balance;
     }
-//   !* This was not included in the scope of the documentation but required for the program to work *!
+//   *! This was not included in the scope of the documentation but required for the program to work !*
     public void displayBalance() {
         System.out.printf("Initial balance (%s): $%.2f\n", owner, balance);
     }

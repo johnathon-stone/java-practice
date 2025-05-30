@@ -18,11 +18,11 @@ public class ObjectPractice {
         System.out.println("Depositing $500 to acc2...");
         acc2.deposit(500);
 //        acc1.displayBalance();     //!* commented this out to correct the look and function of the program *!//
-//        // Part 4: Employee Tracking
-//        new Employee("John");
-//        new Employee("Jane");
-//        new Employee("Mike");
-//        System.out.println("Total Employees: " + Employee.getTotalEmployees());
+        // Part 4: Employee Tracking
+        new Employee("John");
+        new Employee("Jane");
+        new Employee("Mike");
+        System.out.println("\nTotal Employees: " + Employee.getTotalEmployees());
 
     }
 }
