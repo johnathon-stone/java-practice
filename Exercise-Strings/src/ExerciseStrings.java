@@ -19,5 +19,14 @@ public class ExerciseStrings {
 
 //       p1.5 Find the position of the letter 'r' in 'fullName' using 'indexOf()'.
         System.out.println("Index of 'r': " + fullName.indexOf('r'));
+
+//      Part 2. Extracting Parts of a String
+//       p2.1 Declare a string.
+        String sentence = "Learning Java is fun!";
+
+//       p2.2 Extract and print 'Learning', 'Java', and 'fun!'.
+        System.out.printf("\nFirst word: %s\n", sentence.substring(0, 8));
+        System.out.println("Second word: " + sentence.substring(9, 13));
+        System.out.println("Last word: " + sentence.substring(17));
     }
 }
