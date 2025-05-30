@@ -27,6 +27,18 @@ public class ExerciseStrings {
 //       p2.2 Extract and print 'Learning', 'Java', and 'fun!'.
         System.out.printf("\nFirst word: %s\n", sentence.substring(0, 8));
         System.out.println("Second word: " + sentence.substring(9, 13));
-        System.out.println("Last word: " + sentence.substring(17));
+        System.out.printf("Last word: %s\n\n", sentence.substring(17));
+
+//      Part 3. Splitting Strings
+//       p3.1 Declare a string.
+        String csvData = "apple,banana,grape,orange";
+
+//       p3.2 Use 'split()' to break it into an array.
+        String[] fruitArray = csvData.split(",");
+
+//       p3.3 Loop through the array and print each item.
+        for (int i = 0; i < fruitArray.length; i++) {
+            System.out.println("Fruit " + (i + 1) + ":" + fruitArray[i]);
+        }
     }
 }
