@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class exerciseLoops {
     public static void main(String[] args) {
@@ -27,17 +28,28 @@ public class exerciseLoops {
         int startingNum = Integer.parseInt(startingNumSTR);
 
 //       2.2 Use a while loop to count down to zero.
-
+        while (startingNum >= 0) {
+            System.out.println(startingNum);
+            startingNum--;
+        }
 //       2.3 Print "Blast off!" when it reaches zero.
-
+        System.out.println("Blast off!\n");
 //      3. Guess the Number (Do-While Loop)
         System.out.println("Guess the Number (Do-While Loop)\n");
 
 //       3.1 Generate a random number between 1 and 50.
-
-//       3.2 Ask the user to guess the number.
+        Random randgen = new Random();
+        int randNum = randgen.nextInt(1, 5);
+        int numGuess;
 
 //       3.3 Keep asking until the user gets it right using a do-while loop.
+        do{
+//           3.2 Ask the user to guess the number.
+            System.out.println("Guess the number: ");
+            String numGuessSTR = input.nextLine();
+            numGuess = Integer.parseInt(numGuessSTR);
+        } while (numGuess != randNum);
+        System.out.println("You got it correct! The number was: " + randNum);
 
 //  Intermediate Loops Challenges
         System.out.println("\n----Intermediate Loops Challenges----\n");
