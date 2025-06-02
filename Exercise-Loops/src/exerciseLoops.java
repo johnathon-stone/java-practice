@@ -118,18 +118,15 @@ public class exerciseLoops {
             System.out.println("3. Check Balance");
             System.out.println("4. Exit");
             System.out.println("Select an option 1-4: ");
-
-            while (!input.hasNextInt()) {
-                System.out.println("Invalid input.");
-                input.next();
-            }
-            menuSelection = input.nextInt();
+            String menuSelectionSTR = input.nextLine();
+            menuSelection = Integer.parseInt(menuSelectionSTR);
 
             switch (menuSelection) {
                 case 1:
                     System.out.println("Here is your current balance: $" + acctBalance);
                     System.out.println("Enter how much would you like to withdraw: $");
-                    double withdrawAmnt = input.nextDouble();
+                    String withdrawAmntSTR = input.nextLine();
+                    double withdrawAmnt = Double.parseDouble(withdrawAmntSTR);
                     if (withdrawAmnt <= 0) {
                         System.out.println("Amount needs to be larger than 0.");
                     } else if (withdrawAmnt > acctBalance) {
@@ -142,7 +139,8 @@ public class exerciseLoops {
 
                 case 2:
                     System.out.println("Enter an amount to deposit: $");
-                    double depoAmnt = input.nextDouble();
+                    String depoAmntSTR = input.nextLine();
+                    double depoAmnt = Double.parseDouble(depoAmntSTR);
                     if (depoAmnt <= 0) {
                         System.out.println("Amount needs to be larger than 0.");
                     } else {
@@ -171,35 +169,74 @@ public class exerciseLoops {
         System.out.println("FizzBuzz Challenge (For Loop)\n");
 
 //       1.1 Print numbers from 1 to 100.
-        for (int i=1; i<=100; i++){
-            System.out.println(i);
+        for (int i = 1; i<=100; i++){
+            if (i % 3 == 0 && i % 5 == 0) {
+//               1.4 If a number is divisible by both 3 and 5, print "FizzBuzz".
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+//               1.2 If a number is divisible by 3, print "Fizz".
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+//               1.3 If a number is divisible by 5, print "Buzz".
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
         }
-//       1.2 If a number is divisible by 3, print "Fizz".
 
-//       1.3 If a number is divisible by 5, print "Buzz".
-
-//       1.4 If a number is divisible by both 3 and 5, print "FizzBuzz".
-
-//      2. Reverse a String (For Loop)
-        System.out.println("Reverse a String (For Loop)\n");
+//      2. Reverse a String (For Loop) !* Issue somewhere in the code not stopping to get user input *!
+        System.out.println("\nReverse a String (For Loop)\n");
 
 //       2.1 Ask the user for a word.
-
+        System.out.println("Input a word to print in reverse: ");
+        String revWord = input.nextLine();
 //       2.2 Use a for loop to print it in reverse order.
-
+        for (int i = revWord.length() - 1; i >= 0; i--) {
+            System.out.println(revWord.charAt(i));
+        }
 //      3. Prime Number Checker (While Loop)
         System.out.println("Prime Number Checker (While Loop)\n");
 
 //       3.1 Ask the user for a number.
-
 //       3.2 Use a while loop to check if it's prime.
-
+        while (true) {
+            System.out.println("Enter a number to check if it's prime: ");
+            String numPrimeSTR = input.nextLine();
+            int numPrime = Integer.parseInt(numPrimeSTR);
+            if (numPrime <= 1) {
+                System.out.println(numPrime + " is not prime.");
+            } else {
+                boolean primeCheck = true;
+                int i = 2;
+                while (i <= Math.sqrt(numPrime)) {
+                    if (numPrime % i == 0) {
+                        primeCheck = false;
+                        break;
+                    } i++;
+                } if (primeCheck) {
+                    System.out.println(numPrime + " is a prime number.");
+                    break;
+                } else {
+                    System.out.println(numPrime + " isn't a prime number.");
+                    break;
+                }
+            }
+        }
 //      4. Word Counter (For Loop with Split)
         System.out.println("Word Counter (For Loop with Split)\n");
 
 //       4.1 Ask the user for a sentence.
-
+        System.out.println("Please enter a sentence: ");
+        String sentence = input.nextLine();
+        String[] sentenceList = sentence.split(" ");
 //       4.2 Count the number of words (words are separated by spaces).
+        int count = 0;
+        for (String word : sentenceList) {
+            if (!word.isEmpty()) {
+                count++;
+            }
+        }
+        System.out.println("The total number of words entered is: " + count);
 
 //  Break & Continue Challenges
         System.out.println("\n----Break & Continue Challenges----\n");
