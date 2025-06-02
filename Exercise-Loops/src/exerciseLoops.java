@@ -294,15 +294,25 @@ public class exerciseLoops {
         System.out.println("Fix the Infinite Loop\n");
 
 //       1.1 Fix it so that it stops at 10.
+        int i = 0;
+        while (i <= 10) {
+            System.out.println(i);
+            i++;
+        }
 
 //      2. Even Number Checker (Preventing Infinite Loops)
-        System.out.println("Even Number Checker (Preventing Infinite Loops)\n");
-
-//       2.1 Ask the user for an even number.
-
-//       2.2 If they enter an off number, keep asking.
-
-//       2.3 If they enter an even number, exit the loop.
+        System.out.println("\nEven Number Checker (Preventing Infinite Loops)\n");
+        boolean isEven;
+        do {
+//           2.3 If they enter an even number, exit the loop.
+            isEven = true;
+//           2.1 Ask the user for an even number.
+            System.out.println("Enter an even number to break the loop: ");
+            String evenNumSTR = input.nextLine();
+            int evenNum = Integer.parseInt(evenNumSTR);
+//           2.2 If they enter an off number, keep asking.
+            if (evenNum % 2 != 0) isEven = false;
+        } while (!isEven);
 
 //  Bonus Challenges
         System.out.println("\n----Bonus Challenges----\n");
