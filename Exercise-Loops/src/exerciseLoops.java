@@ -321,26 +321,54 @@ public class exerciseLoops {
         System.out.println("Bank Withdrawal System (While Loop)\n");
 
 //       1.1 Start with a balance of $1000.
-
-//       1.2 Ask the user how much they want to withdraw.
-
-//       1.3 If the withdrawal amount is greater than balance, deny the transaction.
-
+        double accountBalance = 1000;
 //       1.4 Stop when balance reaches 0.
+        while (accountBalance > 0) {
+            System.out.println("Current balance: $" + accountBalance);
+//           1.2 Ask the user how much they want to withdraw.
+            System.out.println("How much would you like to withdraw?");
+            String withdrawAmntSTR = input.nextLine();
+            double withdrawAmnt = Double.parseDouble(withdrawAmntSTR);
+//           1.3 If the withdrawal amount is greater than balance, deny the transaction.
+            if (withdrawAmnt > accountBalance) {
+                System.out.println("Your current balance of : $" + accountBalance + " can't handle the transaction amount.");
+            } else {
+                accountBalance -= withdrawAmnt;
+                System.out.println("Transaction processed successfully.");
+            }
+        }
 
 //      2. Find the Longest Word (For Loop)
         System.out.println("Find the Longest Word (For Loop)\n");
 
 //       2.1 Ask the user to enter a sentence.
-
+        System.out.println("Please enter a sentence: ");
+        String sentence = input.nextLine();
+        String[] sentenceList = sentence.split(" ");
+        String longestWord = "";
 //       2.2 Find and print the longest word.
+        for (int i = 0; i < sentenceList.length; i++) {
+            if (sentenceList[i].length() > longestWord.length()) {
+                longestWord = sentenceList[i];
+            }
+        }
+        System.out.println("The Longest number of words entered is: " + longestWord);
 
 //      3. Number Reversal (While Loop)
         System.out.println("Number Reversal (While Loop)\n");
 
-//       1.1 Ask the user for a number.
-
+//       3.1 Ask the user for a number.
+        System.out.println("Input a number to print in reverse: ");
+        String numSTR = input.nextLine();
+        int num = Integer.parseInt(numSTR);
+        int revNum = 0;
 //       3.2 Reverse the digits and print the reversed number.
+        while (num != 0) {
+            int singleNum = num % 10;
+            revNum = revNum * 10 + singleNum;
+            num /= 10;
+        }
+        System.out.println("The number you entered reversed is: " + revNum);
 
 //  Final Challenge: Mini Game
         System.out.println("\n----Final Challenge: Mini Game----\n");
