@@ -19,6 +19,7 @@ public class exerciseLoops {
         for (int i=2; i<=100; i+=2){
             System.out.println(i);
         }
+
 //      2. Countdown Timer (While Loop)
         System.out.println("Countdown Timer (While Loop)\n");
 
@@ -34,20 +35,26 @@ public class exerciseLoops {
         }
 //       2.3 Print "Blast off!" when it reaches zero.
         System.out.println("Blast off!\n");
+
 //      3. Guess the Number (Do-While Loop)
         System.out.println("Guess the Number (Do-While Loop)\n");
 
 //       3.1 Generate a random number between 1 and 50.
         Random randgen = new Random();
-        int randNum = randgen.nextInt(1, 5);
+        int randNum = randgen.nextInt(1, 50);
         int numGuess;
 
 //       3.3 Keep asking until the user gets it right using a do-while loop.
-        do{
+        do {
 //           3.2 Ask the user to guess the number.
             System.out.println("Guess the number: ");
             String numGuessSTR = input.nextLine();
             numGuess = Integer.parseInt(numGuessSTR);
+            if (numGuess < randNum) {
+                System.out.println("Higher. Try again.");
+            } else if (numGuess > randNum) {
+                System.out.println("Lower. Try again.");
+            }
         } while (numGuess != randNum);
         System.out.println("You got it correct! The number was: " + randNum);
 
@@ -58,31 +65,104 @@ public class exerciseLoops {
         System.out.println("Multiplication Table (For Loop)\n");
 
 //       1.1 Ask the user for a number.
-
+        System.out.println("Give me a number: ");
+        String multiNumSTR = input.nextLine();
+        int multiNum = Integer.parseInt(multiNumSTR);
 //       1.2 Print the multiplication table (1 to 10) for that number.
+        for (int i=1; i<=10; i++) {
+            int solution = multiNum * i;
+            System.out.printf("\n%d mutliplied by %d = %d\n", multiNum, i, solution);
+        }
 
 //      2. Password Validator (While Loop)
         System.out.println("Password Validator (While Loop)\n");
 
-//       2.1 Ask the user to enter a password.
-
+        String passwd = "";
 //       2.2 Keep asking until they enter the correct password("letmein").
-
+        while (!passwd.equals("letmein")) {
+//           2.1 Ask the user to enter a password.
+            System.out.println("Enter the correct password: ");
+            passwd = input.nextLine();
+            if (passwd.equals("letmein")) {
+                System.out.println("You got it correct! The password was letmein.");
+                break;
+            }
+        }
 //      3. Find the First Vowel (For Loop)
         System.out.println("Find the First Vowel (For Loop)\n");
 
 //       3.1 Ask the user to enter a word.
-
+        System.out.println("Enter a word: ");
+        String firstVowel = input.nextLine();
 //       3.2 Use a for loop to find the first vowel in the word and print its position.
+        for (int i = 0; i < firstVowel.length(); i++) {
+            char x = Character.toLowerCase(firstVowel.charAt(i));
+            if (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') {
+                System.out.println("The first vowel " + firstVowel.charAt(i) + " was found at position: " + i);
+                break;
+            }
+        }
 
 //      4. Simple ATM System (Do-While Loop)
         System.out.println("Simple ATM System (Do-While Loop)\n");
 
 //       4.1 Start with an account balance of $500.
-
-//       4.2 Ask the user if they want to: Withdraw, Deposit, Check Balance, Exit.
-
+        double acctBalance = 500;
+        int menuSelection;
 //       4.3 Use a do-while loop to keep asking until they choose to exit.
+        do {
+//       4.2 Ask the user if they want to: Withdraw, Deposit, Check Balance, Exit.
+            System.out.println("----ATM Menu Selection----");
+            System.out.println("1. Withdraw");
+            System.out.println("2. Deposit");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
+            System.out.println("Select an option 1-4: ");
+
+            while (!input.hasNextInt()) {
+                System.out.println("Invalid input.");
+                input.next();
+            }
+            menuSelection = input.nextInt();
+
+            switch (menuSelection) {
+                case 1:
+                    System.out.println("Here is your current balance: $" + acctBalance);
+                    System.out.println("Enter how much would you like to withdraw: $");
+                    double withdrawAmnt = input.nextDouble();
+                    if (withdrawAmnt <= 0) {
+                        System.out.println("Amount needs to be larger than 0.");
+                    } else if (withdrawAmnt > acctBalance) {
+                        System.out.println("Insufficient funds.");
+                    } else {
+                        acctBalance -= withdrawAmnt;
+                        System.out.println("Success! Your new balance is: $" + acctBalance);
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Enter an amount to deposit: $");
+                    double depoAmnt = input.nextDouble();
+                    if (depoAmnt <= 0) {
+                        System.out.println("Amount needs to be larger than 0.");
+                    } else {
+                        acctBalance += depoAmnt;
+                        System.out.println("Success! Your new balance is: $" + acctBalance);
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("The current balance is: $" + acctBalance);
+                    break;
+
+                case 4:
+                    System.out.println("Thank you. Goodbye!");
+                    break;
+
+                default:
+                    System.out.println("Invalid selection. Choose 1-4 please.");
+            }
+        } while (menuSelection != 4);
 
 //  Advanced Loops Exercises
         System.out.println("\n----Advanced Loops Exercises----\n");
@@ -91,7 +171,9 @@ public class exerciseLoops {
         System.out.println("FizzBuzz Challenge (For Loop)\n");
 
 //       1.1 Print numbers from 1 to 100.
-
+        for (int i=1; i<=100; i++){
+            System.out.println(i);
+        }
 //       1.2 If a number is divisible by 3, print "Fizz".
 
 //       1.3 If a number is divisible by 5, print "Buzz".
