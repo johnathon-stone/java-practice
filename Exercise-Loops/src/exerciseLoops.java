@@ -245,19 +245,47 @@ public class exerciseLoops {
         System.out.println("Skip Negative Numbers (Continue Statement)\n");
 
 //       1.1 Ask the user to enter numbers.
-
-//       1.2 If the number is negative, skip it using continue.
-
-//       1.3 Stop asking if they enter 0.
+        while (true) {
+            System.out.println("Enter a number or 0 to stop: ");
+            String negNumSTR = input.nextLine();
+            int negNum = Integer.parseInt(negNumSTR);
+//           1.3 Stop asking if they enter 0.
+            if (negNum == 0) {
+                break;
+//           1.2 If the number is negative, skip it using continue.
+            } if (negNum < 0) {
+                System.out.println("You entered a negative number.");
+                continue;
+            } System.out.println("You entered: " + negNum);
+        }
 
 //      2. Find the First Prime Number (Break Statement)
         System.out.println("Find the First Prime Number (Break Statement)\n");
 
 //       2.1 Ask the user for a range (e.g., 1-100).
-
+        System.out.println("Enter a the start of the range: ");
+        String startRangeSTR = input.nextLine();
+        int startRange = Integer.parseInt(startRangeSTR);
+        System.out.println("Enter the end point of the range: ");
+        String endRangeSTR = input.nextLine();
+        int endRange = Integer.parseInt(endRangeSTR);
+        boolean found = false;
 //       2.2 User a for loop to find the first prime number in that range.
-
-//       2.3 Stop checking once you find the first prime number.
+        for (int i = startRange; i <= endRange; i++) {
+//           2.3 Stop checking once you find the first prime number.
+            if (i < 2) continue;
+            boolean primeCheck = true;
+            for (int x = 2; x <= Math.sqrt(i); x++) {
+                if (i % x == 0) {
+                    primeCheck = false;
+                    break;
+                }
+            } if (primeCheck) {
+                System.out.println("The first prime number is: " + i);
+                found = true;
+                break;
+            }
+        }
 
 //  Infinite Loops & Fixing Them
         System.out.println("\n----Infinite Loops & Fixing Them----\n");
