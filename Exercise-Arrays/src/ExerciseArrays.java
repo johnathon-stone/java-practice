@@ -152,9 +152,28 @@ public class ExerciseArrays {
 //        *A String[] for phone numbers.
 //        *A String[] for email addresses.
 //       13.2 Populate them with at least 3 contacts.
+        String[] names = {"Taylor", "Frank", "Michelle"};
+        String[] phoneNum = {"361-522-1064", "281-904-7536", "903-612-4225"};
+        String[] emailAddr = {"taylor.mcleod@gmail.com", "frankthetank@aol.com", "itsmbaby86@hotmail.com"};
 //       13.3 Ask the user for a name.
+        System.out.println("Give me a name to check for please: ");
+        String givenName = input.nextLine();
 //       13.4 If found, print the contact's phone number and email.
-
+        boolean foundThem = false;
+        int indexCount = 0;
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].equalsIgnoreCase(givenName)) {
+                indexCount = i;
+                foundThem = true;
+                break;
+            }
+        }
+        if (foundThem) {
+            System.out.println("I found: " + givenName + " here is their phone number: " + phoneNum[indexCount] + " and email: " + emailAddr[indexCount]);
+        } else {
+            System.out.println("We were unable to find them.");
+        }
+        
 //** Final Challenge: Array Sorting (Optional).
 //*     14. Sort an Array Alphabetically.
 //       14.1 Create an array of 5 fruit names.
