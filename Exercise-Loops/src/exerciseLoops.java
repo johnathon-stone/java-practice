@@ -5,10 +5,10 @@ public class exerciseLoops {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-//  Basic Loops Practice
+//**  Basic Loops Practice
         System.out.println("\n----Basic Loops Practice----\n");
 
-//      1. Count up!(For Loop)
+//*      1. Count up!(For Loop)
         System.out.println("Count up!(For Loop)\n");
 
 //       1.1 Write a program that prints numbers 1 to 100 using a for loop.
@@ -20,14 +20,13 @@ public class exerciseLoops {
             System.out.println(i);
         }
 
-//      2. Countdown Timer (While Loop)
+//*      2. Countdown Timer (While Loop)
         System.out.println("Countdown Timer (While Loop)\n");
 
 //       2.1 Prompt the user for a starting number.
         System.out.println("Choose a starting number: ");
         String startingNumSTR = input.nextLine();
         int startingNum = Integer.parseInt(startingNumSTR);
-
 //       2.2 Use a while loop to count down to zero.
         while (startingNum >= 0) {
             System.out.println(startingNum);
@@ -36,14 +35,13 @@ public class exerciseLoops {
 //       2.3 Print "Blast off!" when it reaches zero.
         System.out.println("Blast off!\n");
 
-//      3. Guess the Number (Do-While Loop)
+//*      3. Guess the Number (Do-While Loop)
         System.out.println("Guess the Number (Do-While Loop)\n");
 
 //       3.1 Generate a random number between 1 and 50.
         Random randgen = new Random();
         int randNum = randgen.nextInt(1, 50);
         int numGuess;
-
 //       3.3 Keep asking until the user gets it right using a do-while loop.
         do {
 //           3.2 Ask the user to guess the number.
@@ -58,10 +56,10 @@ public class exerciseLoops {
         } while (numGuess != randNum);
         System.out.println("You got it correct! The number was: " + randNum);
 
-//  Intermediate Loops Challenges
+//**  Intermediate Loops Challenges
         System.out.println("\n----Intermediate Loops Challenges----\n");
 
-//      1. Multiplication Table (For Loop)
+//*      1. Multiplication Table (For Loop)
         System.out.println("Multiplication Table (For Loop)\n");
 
 //       1.1 Ask the user for a number.
@@ -74,7 +72,7 @@ public class exerciseLoops {
             System.out.printf("\n%d mutliplied by %d = %d\n", multiNum, i, solution);
         }
 
-//      2. Password Validator (While Loop)
+//*      2. Password Validator (While Loop)
         System.out.println("Password Validator (While Loop)\n");
 
         String passwd = "";
@@ -88,7 +86,8 @@ public class exerciseLoops {
                 break;
             }
         }
-//      3. Find the First Vowel (For Loop)
+
+//*      3. Find the First Vowel (For Loop)
         System.out.println("Find the First Vowel (For Loop)\n");
 
 //       3.1 Ask the user to enter a word.
@@ -103,7 +102,7 @@ public class exerciseLoops {
             }
         }
 
-//      4. Simple ATM System (Do-While Loop)
+//*      4. Simple ATM System (Do-While Loop)
         System.out.println("Simple ATM System (Do-While Loop)\n");
 
 //       4.1 Start with an account balance of $500.
@@ -162,10 +161,10 @@ public class exerciseLoops {
             }
         } while (menuSelection != 4);
 
-//  Advanced Loops Exercises
+//**  Advanced Loops Exercises
         System.out.println("\n----Advanced Loops Exercises----\n");
 
-//      1. FizzBuzz Challenge (For Loop)
+//*      1. FizzBuzz Challenge (For Loop)
         System.out.println("FizzBuzz Challenge (For Loop)\n");
 
 //       1.1 Print numbers from 1 to 100.
@@ -184,7 +183,7 @@ public class exerciseLoops {
             }
         }
 
-//      2. Reverse a String (For Loop) !* Issue somewhere in the code not stopping to get user input *!
+//*      2. Reverse a String (For Loop) !* Issue somewhere in the code not stopping to get user input *!
         System.out.println("\nReverse a String (For Loop)\n");
 
 //       2.1 Ask the user for a word.
@@ -194,12 +193,14 @@ public class exerciseLoops {
         for (int i = revWord.length() - 1; i >= 0; i--) {
             System.out.println(revWord.charAt(i));
         }
-//      3. Prime Number Checker (While Loop)
+
+//*      3. Prime Number Checker (While Loop)
         System.out.println("Prime Number Checker (While Loop)\n");
 
-//       3.1 Ask the user for a number.
+
 //       3.2 Use a while loop to check if it's prime.
         while (true) {
+//           3.1 Ask the user for a number.
             System.out.println("Enter a number to check if it's prime: ");
             String numPrimeSTR = input.nextLine();
             int numPrime = Integer.parseInt(numPrimeSTR);
@@ -222,7 +223,7 @@ public class exerciseLoops {
                 }
             }
         }
-//      4. Word Counter (For Loop with Split)
+//*      4. Word Counter (For Loop with Split)
         System.out.println("Word Counter (For Loop with Split)\n");
 
 //       4.1 Ask the user for a sentence.
@@ -238,10 +239,10 @@ public class exerciseLoops {
         }
         System.out.println("The total number of words entered is: " + count);
 
-//  Break & Continue Challenges
+//**  Break & Continue Challenges
         System.out.println("\n----Break & Continue Challenges----\n");
 
-//      1. Skip Negative Numbers (Continue Statement)
+//*      1. Skip Negative Numbers (Continue Statement)
         System.out.println("Skip Negative Numbers (Continue Statement)\n");
 
 //       1.1 Ask the user to enter numbers.
@@ -259,7 +260,7 @@ public class exerciseLoops {
             } System.out.println("You entered: " + negNum);
         }
 
-//      2. Find the First Prime Number (Break Statement)
+//*      2. Find the First Prime Number (Break Statement)
         System.out.println("Find the First Prime Number (Break Statement)\n");
 
 //       2.1 Ask the user for a range (e.g., 1-100).
@@ -269,7 +270,6 @@ public class exerciseLoops {
         System.out.println("Enter the end point of the range: ");
         String endRangeSTR = input.nextLine();
         int endRange = Integer.parseInt(endRangeSTR);
-        boolean found = false;
 //       2.2 User a for loop to find the first prime number in that range.
         for (int i = startRange; i <= endRange; i++) {
 //           2.3 Stop checking once you find the first prime number.
@@ -282,15 +282,14 @@ public class exerciseLoops {
                 }
             } if (primeCheck) {
                 System.out.println("The first prime number is: " + i);
-                found = true;
                 break;
             }
         }
 
-//  Infinite Loops & Fixing Them
+//**  Infinite Loops & Fixing Them
         System.out.println("\n----Infinite Loops & Fixing Them----\n");
 
-//      1. Fix the Infinite Loop
+//*      1. Fix the Infinite Loop
         System.out.println("Fix the Infinite Loop\n");
 
 //       1.1 Fix it so that it stops at 10.
@@ -300,8 +299,9 @@ public class exerciseLoops {
             i++;
         }
 
-//      2. Even Number Checker (Preventing Infinite Loops)
+//*      2. Even Number Checker (Preventing Infinite Loops)
         System.out.println("\nEven Number Checker (Preventing Infinite Loops)\n");
+
         boolean isEven;
         do {
 //           2.3 If they enter an even number, exit the loop.
@@ -314,10 +314,10 @@ public class exerciseLoops {
             if (evenNum % 2 != 0) isEven = false;
         } while (!isEven);
 
-//  Bonus Challenges
+//**  Bonus Challenges
         System.out.println("\n----Bonus Challenges----\n");
 
-//      1. Bank Withdrawal System (While Loop)
+//*      1. Bank Withdrawal System (While Loop)
         System.out.println("Bank Withdrawal System (While Loop)\n");
 
 //       1.1 Start with a balance of $1000.
@@ -338,23 +338,23 @@ public class exerciseLoops {
             }
         }
 
-//      2. Find the Longest Word (For Loop)
+//*      2. Find the Longest Word (For Loop)
         System.out.println("Find the Longest Word (For Loop)\n");
 
 //       2.1 Ask the user to enter a sentence.
         System.out.println("Please enter a sentence: ");
-        String sentence = input.nextLine();
-        String[] sentenceList = sentence.split(" ");
+        String longSentence = input.nextLine();
+        String[] longSentenceList = longSentence.split(" ");
         String longestWord = "";
 //       2.2 Find and print the longest word.
-        for (int i = 0; i < sentenceList.length; i++) {
-            if (sentenceList[i].length() > longestWord.length()) {
-                longestWord = sentenceList[i];
+        for (int l = 0; l < longSentenceList.length; l++) {
+            if (sentenceList[l].length() > longestWord.length()) {
+                longestWord = sentenceList[l];
             }
         }
         System.out.println("The Longest number of words entered is: " + longestWord);
 
-//      3. Number Reversal (While Loop)
+//*      3. Number Reversal (While Loop)
         System.out.println("Number Reversal (While Loop)\n");
 
 //       3.1 Ask the user for a number.
@@ -370,19 +370,33 @@ public class exerciseLoops {
         }
         System.out.println("The number you entered reversed is: " + revNum);
 
-//  Final Challenge: Mini Game
+//**  Final Challenge: Mini Game
         System.out.println("\n----Final Challenge: Mini Game----\n");
 
-//      1. Guess the Word Game (While Loop)
+//*      1. Guess the Word Game (While Loop)
         System.out.println("Guess the Word Game (While Loop)\n");
-
+        String[] wordList = {"apple", "banana", "cherry"};
 //       1.1 The computer selects a random word from a list ("apple", "banana", "cherry")
-
-//       1.2 Ask the user to guess the word.
-
+        String secWord = wordList[new Random().nextInt(wordList.length)];
 //       1.3 Keep asking until they guess it correctly.
-
-//       1.4 Provide hints if they get it partially correct.
-
+        while (true) {
+//           1.2 Ask the user to guess the word.
+            System.out.println("Guess the secret word: ");
+            String guess = input.nextLine().toLowerCase();
+            if (guess.equals(secWord)) {
+                System.out.println("You got it!");
+                break;
+            }
+//           1.4 Provide hints if they get it partially correct.
+            StringBuilder hints = new StringBuilder();
+            for (int h = 0; h < secWord.length(); h++) {
+                if (h < guess.length() && guess.charAt(h) == secWord.charAt(h)) {
+                    hints.append(secWord.charAt(h));
+                } else {
+                    hints.append("_");
+                }
+            }
+            System.out.println("Hint: " + hints);
+        }
     }
 }
