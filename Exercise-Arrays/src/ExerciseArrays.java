@@ -1,10 +1,11 @@
 import java.util.Arrays;
-import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ExerciseArrays {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Random random = new Random();
 //** Part 1: Basic Array Operations
 //*     1. Declare & Assign an Array.
 //       1.1 Create an array of 5 city names and assign values directly.
@@ -74,7 +75,7 @@ public class ExerciseArrays {
         }
 //       7.3 Print the total.
         System.out.println("The sum of all the test scores is: " + sum);
-        
+
 //*     8. Find the Maximum & Minimum.
 //       8.1 Use a loop to find the highest and lowest test score in the array.
         double highestGrade = 0.0;
@@ -99,18 +100,50 @@ public class ExerciseArrays {
 //** Part 4. Advanced Challenges.
 //*     10. Count Occurrences of a Value.
 //       10.1 Create an array of 10 random numbers between 1 and 5.
+        int[] randNum = new int[10];
+        for (int i = 0; i < randNum.length; i++) {
+            randNum[i] = random.nextInt(1, 5);
+        }
 //       10.2 Count how many times the number 3 appears in the array.
+        int threeCount = 0;
+        for (int i = 0; i < randNum.length; i++) {
+            if (randNum[i] == 3) {
+                threeCount++;
+            }
+        }
+        System.out.println("The number three appeared: " + threeCount);
 
 //*     11. Shift Elements in an Array.
 //       11.1 Given an array {1, 2, 3, 4, 5}, modify it so that:
 //        *The first element moves to the last position.
 //        *The remaining elements shift one step left.
 //        *Output: {2, 3, 4, 5, 1}.
+        int[] shiftElements = {1, 2, 3, 4, 5};
+        int firstElement = shiftElements[0];
+        for (int i = 0; i < shiftElements.length - 1; i++) {
+            shiftElements[i] = shiftElements[i + 1];
+        }
+        shiftElements[shiftElements.length - 1] = firstElement;
+        System.out.println(Arrays.toString(shiftElements));
 
 //*     12. Check for Duplicates.
 //       12.1 Create an array of 6 student names.
+        String[] studentNames = {"Richard","Michael", "Eric", "Jon", "James", "Paul"};
 //       12.2 Check if the array contains duplicate names.
+        Arrays.sort(studentNames);
+        boolean duplicateNames = false;
+        for (int i = 0; i < studentNames.length - 1; i++) {
+            if (studentNames[i] == studentNames[i + 1]) {
+                duplicateNames = true;
+                break;
+            }
+        }
 //       12.3 Print "Duplicates found!" if any name appears more than once.
+        if (duplicateNames) {
+            System.out.println("Duplicates found!");
+        } else {
+            System.out.println("No duplicates found.");
+        }
 
 //** Bonus Challenge: Mini Address Book.
 //*     13. Store and Print Contact Information.
