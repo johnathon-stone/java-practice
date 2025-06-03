@@ -62,5 +62,75 @@ public class ExerciseArrays {
         } else {
             System.out.println("City not found!");
         }
+
+//** Part 3: Numeric Arrays & Calculations.
+//*     7. Sum of Numbers in an Array.
+//       7.1 Create an array of 5 test scores.
+        double[] testScores = {77.8, 93.1, 55.7, 100, 89.5};
+//       7.2 Loop through the array and calculate the sum of all scores.
+        double sum = 0.0;
+        for (int i = 0; i < testScores.length; i++) {
+            sum += testScores[i];
+        }
+//       7.3 Print the total.
+        System.out.println("The sum of all the test scores is: " + sum);
+        
+//*     8. Find the Maximum & Minimum.
+//       8.1 Use a loop to find the highest and lowest test score in the array.
+        double highestGrade = 0.0;
+        double lowestGrade = 100.0;
+        for (int i = 0; i < testScores.length; i++) {
+            if (highestGrade < testScores[i]) {
+                highestGrade = testScores[i];
+                if (lowestGrade > testScores[i]) {
+                    lowestGrade = testScores[i];
+                }
+            }
+        }
+//       8.2 Print both values.
+        System.out.println("Highest grade: " + highestGrade);
+        System.out.println("Lowest grade: " + lowestGrade);
+
+//*     9. Calculate the Average.
+//       9.1 Compute and print the average score.
+        double avgScore = sum / testScores.length;
+        System.out.println("Average grade: " + avgScore);
+
+//** Part 4. Advanced Challenges.
+//*     10. Count Occurrences of a Value.
+//       10.1 Create an array of 10 random numbers between 1 and 5.
+//       10.2 Count how many times the number 3 appears in the array.
+
+//*     11. Shift Elements in an Array.
+//       11.1 Given an array {1, 2, 3, 4, 5}, modify it so that:
+//        *The first element moves to the last position.
+//        *The remaining elements shift one step left.
+//        *Output: {2, 3, 4, 5, 1}.
+
+//*     12. Check for Duplicates.
+//       12.1 Create an array of 6 student names.
+//       12.2 Check if the array contains duplicate names.
+//       12.3 Print "Duplicates found!" if any name appears more than once.
+
+//** Bonus Challenge: Mini Address Book.
+//*     13. Store and Print Contact Information.
+//       13.1 Create three parallel arrays:
+//        *A String[] for names.
+//        *A String[] for phone numbers.
+//        *A String[] for email addresses.
+//       13.2 Populate them with at least 3 contacts.
+//       13.3 Ask the user for a name.
+//       13.4 If found, print the contact's phone number and email.
+
+//** Final Challenge: Array Sorting (Optional).
+//*     14. Sort an Array Alphabetically.
+//       14.1 Create an array of 5 fruit names.
+//       14.2 Sort them in alphabetical order.
+//       14.3 Print the sorted array.
+
+//*     15. Sort an Array of Numbers.
+//       15.1 Create an array of 10 random numbers.
+//       15.2 Sort them in ascending order.
+//       15.3 Print the sorted list.
     }
 }
