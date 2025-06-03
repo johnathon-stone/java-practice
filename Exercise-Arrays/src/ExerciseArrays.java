@@ -173,16 +173,25 @@ public class ExerciseArrays {
         } else {
             System.out.println("We were unable to find them.");
         }
-        
+
 //** Final Challenge: Array Sorting (Optional).
 //*     14. Sort an Array Alphabetically.
 //       14.1 Create an array of 5 fruit names.
+        String[] fruits = {"dragonfruit", "watermelon", "strawberry", "orange", "apricot"};
 //       14.2 Sort them in alphabetical order.
+        Arrays.sort(fruits);
 //       14.3 Print the sorted array.
+        System.out.println(Arrays.toString(fruits));
 
 //*     15. Sort an Array of Numbers.
 //       15.1 Create an array of 10 random numbers.
+        int[] randNumSort = new int[10];
+        for (int i = 0; i < randNumSort.length; i++) {
+            randNumSort[i] = random.nextInt(1, 100);
+        }
 //       15.2 Sort them in ascending order.
+        Arrays.sort(randNumSort);
 //       15.3 Print the sorted list.
+        System.out.println(Arrays.toString(randNumSort));
     }
 }
