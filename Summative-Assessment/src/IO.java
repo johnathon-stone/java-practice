@@ -30,24 +30,20 @@ public class IO {
         System.exit(0);
     }
 
+
     /*Method to request user input of a locker number with exception handling.*/
     public static int requestLockerNumber() {
-        boolean isLockerValid = false;
-        while (!isLockerValid) {
+        while (true) {
             System.out.println("Enter a locker number you would like to access: ");
             try {
                 int index = Integer.parseInt(input.nextLine());
-                if (!Lockers.isRented(index)){
-                    isLockerValid = false;
-                } else {
+                if (Lockers.isRented(index)){
                     return (index - 1);
                 }
-            } catch (NumberFormatException e) {
+            } catch(NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a valid locker number.");
             }
-//            Lockers.isRented(index);
         }
-        return 0;
     }
 
     /*Method used print an instance based string.*/
@@ -68,8 +64,7 @@ public class IO {
     /*Method used to initiate getting user input for the value(pin) assigned.*/
     public static String enterPin() {
         System.out.println("Enter your 4 digit pin:");
-        String pinGuess = input.nextLine();
-        return pinGuess;
+        return input.nextLine();
     }
 
     /*Method used to print confirmation of successful entry and validation of the specific value(pin) in lockers[].*/
