@@ -30,7 +30,6 @@ public class IO {
         System.exit(0);
     }
 
-
     /*Method to request user input of a locker number with exception handling.*/
     public static int requestLockerNumber() {
         while (true) {
@@ -78,7 +77,7 @@ public class IO {
     }
 
     /*Method that prints a statement requesting user confirmation and validation based on input.*/
-    public static boolean nullConfirmation() {
+    public static boolean releaseConfirmation() {
         System.out.println("Are you sure? (y/n)");
         String closeDecision = input.nextLine();
         if ("y".equalsIgnoreCase(closeDecision)) {

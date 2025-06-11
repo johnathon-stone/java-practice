@@ -25,9 +25,6 @@ public class Main {
                 }
             } else {
                 switch (choice) {
-                    case "1":
-                        LockerServices.rentLocker();
-                        break;
                     case "2":
                         LockerServices.accessLocker();
                         break;

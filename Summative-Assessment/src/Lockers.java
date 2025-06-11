@@ -65,11 +65,11 @@ public class Lockers {
     }
 
     /*Method used to validate the pin from user input against the value in lockers[].*/
-    public static void validatePinClosure(int requestedLockerNum, String currentPin) {
+    public static void validatePinForRelease(int requestedLockerNum, String currentPin) {
         while (true) {
             String pinGuess = IO.enterPin();
             if (currentPin.equals(pinGuess)) {
-                boolean resetPinCheck = IO.nullConfirmation();
+                boolean resetPinCheck = IO.releaseConfirmation();
                 if (resetPinCheck) {
                     resetPin(requestedLockerNum);
                     break;
