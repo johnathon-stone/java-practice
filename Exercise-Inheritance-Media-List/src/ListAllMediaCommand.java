@@ -1,3 +1,6 @@
 public class ListAllMediaCommand {
-//     - handles displaying all media
+    //- Handles displaying all media.
+    public void execute(TerminalUtils terminalUtils, MediaService mediaService) {
+        terminalUtils.displayMediaList(mediaService.getAllMedia());
+    }
 }

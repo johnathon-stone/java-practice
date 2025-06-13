@@ -1,38 +1,64 @@
 import java.util.Scanner;
+import java.util.List;
 
 public class TerminalUtils {
     Scanner input = new Scanner(System.in);
 
-    //- shows the main menu options
+    //- Shows the main menu options.
     public void displayMenu() {
-        System.out.println("=== Media List Application ===");
-        System.out.println("1. Add Media\n2. Remove Media\n3. Play Media\n4. List All Media\n5. Quit");
-        System.out.println("Choose an option: ");
+        displayMessage("=== Media List Application ===");
+        displayMessage("1. Add Media\n2. Remove Media\n3. Play Media\n4. List All Media\n5. Quit");
     }
 
-    //- gets and validates menu selection
-    public void getMenuChoice() {
-        return String menuChoice = input.nextLine();
+    //- Gets, validates, and then returns integer choice. /* Not needed with the menu going through a switch. */
+//    public int getMenuChoice() {
+//        while (true){
+//            int choice = getInt("Choose an option: ");
+//            if (choice > 5 && choice < 1) {
+//                displayMessage("Invalid selection please choose from 1-5.");
+//            } else {
+//                return choice;
+//            }
+//        }
+//    }
+
+    //- Gets string input with prompt.
+    public String getString(String prompt) {
+        while (true) {
+            displayMessage(prompt);
+            String userInputSTR = input.nextLine();
+            if (userInputSTR.trim().isEmpty()){
+                displayMessage("Invalid input, try again.");
+            } else return userInputSTR;
+        }
     }
 
-    //- gets string input with prompt
-    public void getString(String prompt) {
-
+    //- Gets integer input with prompt and validation.
+    public int getInt(String prompt) {
+        while (true) {
+            try {
+                displayMessage(prompt);
+                return Integer.parseInt(input.nextLine());
+            } catch (NumberFormatException e) {
+                displayMessage("Invalid input, try again.");
+            }
+        }
     }
 
-    //- gets integer input with prompt and validation
-    public void getInt(String prompt) {
-
-    }
-
-    //- displays messages to user
+    //- Displays messages to user.
     public void displayMessage(String message) {
-
+        System.out.println(message);
     }
 
-    //- formats and displays media list
+    //- Formats and displays media list.
     public void displayMediaList(List<Media> mediaList) {
-
+        if (mediaList.isEmpty()) {
+            displayMessage("No media available.");
+            return;
+        }
+        displayMessage("===All Media in Library===");
+        for (int i = 0; i < mediaList.size(); i++) {
+            System.out.println((i + 1) + ". " + mediaList.get(i).getName() + mediaList.get(i).getDescription());
+        }
     }
-
 }

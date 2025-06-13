@@ -1,16 +1,48 @@
+import java.util.ArrayList;
+import java.util.List;
+
+//- Class to manage the media collection:
 public class MediaService {
-//    class to manage the media collection:
 
-    addMedia(Media media) //- adds media to the list
+    //- Establishing mediaList to hold all the Media.
+    private final List<Media> mediaList = new ArrayList<>();
 
-    removeMedia(String name) //- removes media by name, returns boolean success
+    //- Adds media to the list.
+    public void addMedia(Media media) {
+        mediaList.add(media);
+    }
 
-    findMediaByName(String name) //- finds and returns media by name
+    //- Removes media by name, returns boolean success.
+    public boolean removeMedia(String name) {
+        Media mediaToRemove = findMediaByName(name);
+        if (mediaToRemove != null) {
+            return mediaList.remove(mediaToRemove);
+        }
+        return false;
+    }
 
-    getAllMedia() //- returns copy of media list
+    //- Finds and returns media by name.
+    public Media findMediaByName(String name) {
+        for (int i = 0; i < getMediaCount(); i++) {
+            if (mediaList.get(i).getName().equalsIgnoreCase(name)) {
+                return mediaList.get(i);
+            }
+        }
+        return null;
+    }
 
-    getMediaCount() //- returns number of media items
+    //- Returns copy of media list.
+    public List<Media> getAllMedia() {
+        return new ArrayList<>(mediaList);
+    }
 
-    isEmpty() //- checks if list is empty
+    //- Returns number of media items.
+    public int getMediaCount() {
+        return mediaList.size();
+    }
 
+    //- Checks if list is empty.
+    public boolean isEmpty() {
+        return mediaList.isEmpty();
+    }
 }
