@@ -1,6 +1,6 @@
-package org.example;
-//- Class to handle the HealSpell functionality through interface implementation.
-class HealSpell implements Spell{
+package org.example.spells;
+
+public class HealSpell implements Spell {
     @Override
     public void cast() {
         System.out.println("You feel a beam of warm light surround and move through you, healing your wounds and what ails you.");

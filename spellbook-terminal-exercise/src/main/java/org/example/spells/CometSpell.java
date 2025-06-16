@@ -1,6 +1,6 @@
-package org.example;
-//- Class to handle the CometSpell functionality through interface implementation.
-class CometSpell implements Spell{
+package org.example.spells;
+
+public class CometSpell implements Spell {
     @Override
     public void cast() {
         System.out.println("You reach deep within your soul pulling all the energy out into a large comet that launches from above you.");

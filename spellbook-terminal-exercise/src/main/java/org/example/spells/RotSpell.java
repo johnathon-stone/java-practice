@@ -1,6 +1,6 @@
-package org.example;
-//- Class to handle the RotSpell functionality through interface implementation.
-class RotSpell implements Spell {
+package org.example.spells;
+
+public class RotSpell implements Spell {
     @Override
     public void cast() {
         System.out.println("You conjure a plague of death from your finger tips infecting those you choose.");

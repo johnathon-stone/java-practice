@@ -1,6 +1,6 @@
-package org.example;
-//- Class to handle the ExitSpell functionality through interface implementation.
-class ExitSpell implements Spell {
+package org.example.spells;
+
+public class ExitSpell implements Spell {
 
     @Override
     public void cast() {
