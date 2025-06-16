@@ -1,8 +1,8 @@
 public class Book extends Media {
     //- Author in String for book.
-    private String author;
+    private final String author;
     //- Page Count in Integer for book.
-    private int pageCount;
+    private final int pageCount;
 
     //- Setter for Book.
     public Book(String name, String author, int pageCount) {

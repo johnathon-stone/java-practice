@@ -1,8 +1,8 @@
 public class Audio extends Media {
     //- Duration in Integer for Audio.
-    private int duration;
+    private final int duration;
     //- Artist in String for Audio.
-    private String artist;
+    private final String artist;
 
     //- Setter for Audio.
     public Audio(String name, int duration, String artist) {

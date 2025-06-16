@@ -1,8 +1,8 @@
 public class Image extends Media {
     //- Dimensions in String for Image.
-    private String dimensions;
+    private final String dimensions;
     //- FileFormat in String for Image.
-    private String fileFormat;
+    private final String fileFormat;
 
     //- Setter for Image.
     public Image(String name, String dimension, String fileFormat) {

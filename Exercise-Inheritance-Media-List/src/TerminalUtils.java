@@ -10,18 +10,6 @@ public class TerminalUtils {
         displayMessage("1. Add Media\n2. Remove Media\n3. Play Media\n4. List All Media\n5. Quit");
     }
 
-    //- Gets, validates, and then returns integer choice. /* Not needed with the menu going through a switch. */
-//    public int getMenuChoice() {
-//        while (true){
-//            int choice = getInt("Choose an option: ");
-//            if (choice > 5 && choice < 1) {
-//                displayMessage("Invalid selection please choose from 1-5.");
-//            } else {
-//                return choice;
-//            }
-//        }
-//    }
-
     //- Gets string input with prompt.
     public String getString(String prompt) {
         while (true) {

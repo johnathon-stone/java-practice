@@ -1,8 +1,8 @@
 public class Video extends Media {
     //- Duration in Integer for Video.
-    private int duration;
+    private final int duration;
     //- Resolution in String for Video.
-    private String resolution;
+    private final String resolution;
 
     //- Setter for Video.
     public Video(String name, int duration, String resolution) {
