@@ -3,7 +3,7 @@ public class RemoveMediaCommand {
     public void execute(TerminalUtils terminalUtils, MediaService mediaService) {
         //- Checking if mediaList is empty and returning if so.
         if (mediaService.isEmpty()) {
-            terminalUtils.displayMessage("No media to play.");
+            terminalUtils.displayMessage("No media to remove.");
             return;
         }
         //- Displaying mediaList to the user to help navigate input.
