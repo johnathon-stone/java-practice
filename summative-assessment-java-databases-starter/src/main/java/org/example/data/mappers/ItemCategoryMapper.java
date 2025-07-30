@@ -8,10 +8,13 @@ import java.sql.SQLException;
 
 public class ItemCategoryMapper implements RowMapper<ItemCategory> {
 
+    @Override
     public ItemCategory mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         ItemCategory itemCategory = new ItemCategory();
+
         itemCategory.setItemCategoryID(resultSet.getInt("ItemCategoryID"));
         itemCategory.setItemCategoryName(resultSet.getString("ItemCategoryName"));
+
         return itemCategory;
     }
 }

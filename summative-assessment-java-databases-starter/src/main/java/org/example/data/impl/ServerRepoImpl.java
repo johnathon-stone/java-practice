@@ -5,20 +5,23 @@ import org.example.data.exceptions.InternalErrorException;
 import org.example.data.exceptions.RecordNotFoundException;
 import org.example.data.mappers.ServerMapper;
 import org.example.model.Server;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public class ServerRepoImpl implements ServerRepo {
 
     private final JdbcTemplate jdbcTemplate;
     private final ServerMapper serverMapper;
 
-    public ServerRepoImpl(JdbcTemplate jdbcTemplate, ServerMapper serverMapper) {
+    public ServerRepoImpl(@Autowired JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        this.serverMapper = serverMapper;
+        this.serverMapper = new ServerMapper();
     }
 
     @Override
@@ -51,11 +54,12 @@ public class ServerRepoImpl implements ServerRepo {
                 	HireDate,
                 	TermDate
                 FROM `Server`
-                WHERE ? BETWEEN HireDate AND TermDate;
+                WHERE ? >= HireDate
+                	AND (TermDate IS NULL OR ? <= TermDate);
                 """;
 
         try {
-            return jdbcTemplate.query(sql, serverMapper, date);
+            return jdbcTemplate.query(sql, serverMapper, date, date);
         } catch (DataAccessException e) {
             throw new InternalErrorException();
         }

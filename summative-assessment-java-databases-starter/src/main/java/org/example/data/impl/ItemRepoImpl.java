@@ -6,19 +6,22 @@ import org.example.data.mappers.ItemCategoryMapper;
 import org.example.data.mappers.ItemMapper;
 import org.example.model.Item;
 import org.example.model.ItemCategory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public class ItemRepoImpl implements ItemRepo {
 
     private final JdbcTemplate jdbcTemplate;
     private final ItemMapper itemMapper;
     private final ItemCategoryMapper itemCategoryMapper;
 
-    public ItemRepoImpl(JdbcTemplate jdbcTemplate) {
+    public ItemRepoImpl(@Autowired JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         this.itemMapper = new ItemMapper();
         this.itemCategoryMapper = new ItemCategoryMapper();
@@ -29,7 +32,7 @@ public class ItemRepoImpl implements ItemRepo {
                 SELECT
                     ItemID,
                     ItemCategoryID,
-                    ItemName
+                    ItemName,
                     ItemDescription,
                     StartDate,
                     EndDate,
@@ -57,8 +60,8 @@ public class ItemRepoImpl implements ItemRepo {
                     EndDate,
                     UnitPrice
                 FROM Item
-                WHERE ? BETWEEN StartDate AND EndDate
-                ORDER BY ItemName
+                WHERE ? BETWEEN StartDate AND IFNULL(EndDate, '9999-12-31');
+                ORDER BY ItemID
                 """;
 
         try {
@@ -80,9 +83,9 @@ public class ItemRepoImpl implements ItemRepo {
                     EndDate,
                     UnitPrice
                 FROM Item
-                WHERE ? BETWEEN StartDate AND EndDate
+                WHERE ? BETWEEN StartDate AND IFNULL(EndDate, '9999-12-31')
                 AND ItemCategoryID = ?
-                ORDER BY ItemName
+                ORDER BY ItemID;
                 """;
 
         try {
@@ -99,7 +102,7 @@ public class ItemRepoImpl implements ItemRepo {
                     ItemCategoryID,
                     ItemCategoryName
                 FROM ItemCategory
-                ORDER BY ItemCategoryName;
+                ORDER BY ItemCategoryID;
                 """;
 
         try {
