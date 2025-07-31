@@ -190,11 +190,21 @@ public class OrderRepoImpl implements OrderRepo {
 
             stmt.registerOutParameter(7, java.sql.Types.INTEGER);
 
-            stmt.execute();
+            // Execute the procedure
+            boolean hasResults = stmt.execute();
 
+            // Debug: Log if there were result sets (there shouldn't be for this procedure)
+            System.out.println("Procedure executed, hasResults: " + hasResults);
+
+            // Get the output parameter
             int orderID = stmt.getInt(7);
-            if (orderID <= 0) {
-                throw new SQLException("Failed to generate order ID from stored procedure");
+
+            // Debug: Check if the parameter was null
+            boolean wasNull = stmt.wasNull();
+            System.out.println("OrderID from procedure: " + orderID + ", wasNull: " + wasNull);
+
+            if (orderID <= 0 || wasNull) {
+                throw new SQLException("Failed to generate order ID from stored procedure. OrderID: " + orderID + ", wasNull: " + wasNull);
             }
             return orderID;
         }
@@ -216,8 +226,8 @@ public class OrderRepoImpl implements OrderRepo {
     private void callAddPayment(Connection conn, int orderID, List<Payment> payments) throws SQLException {
         try (CallableStatement stmt = conn.prepareCall("{call AddPayment(?, ?, ?)}")) {
             for (Payment payment : payments) {
-                stmt.setInt(1, orderID);
-                stmt.setInt(2, payment.getPaymentTypeID());
+                stmt.setInt(1, payment.getPaymentTypeID());
+                stmt.setInt(2, orderID);
                 stmt.setBigDecimal(3, payment.getAmount());
 
                 stmt.execute();
