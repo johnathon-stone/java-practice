@@ -193,15 +193,11 @@ public class OrderRepoImpl implements OrderRepo {
             // Execute the procedure
             boolean hasResults = stmt.execute();
 
-            // Debug: Log if there were result sets (there shouldn't be for this procedure)
-            System.out.println("Procedure executed, hasResults: " + hasResults);
-
             // Get the output parameter
             int orderID = stmt.getInt(7);
 
             // Debug: Check if the parameter was null
             boolean wasNull = stmt.wasNull();
-            System.out.println("OrderID from procedure: " + orderID + ", wasNull: " + wasNull);
 
             if (orderID <= 0 || wasNull) {
                 throw new SQLException("Failed to generate order ID from stored procedure. OrderID: " + orderID + ", wasNull: " + wasNull);
