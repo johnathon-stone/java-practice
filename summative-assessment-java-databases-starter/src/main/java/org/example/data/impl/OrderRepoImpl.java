@@ -6,7 +6,6 @@ import org.example.data.exceptions.RecordNotFoundException;
 import org.example.data.mappers.*;
 import org.example.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
